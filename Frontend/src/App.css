@@ -1,0 +1,83 @@
+#brand{
+  color:#49274a;
+  font-weight: bold;
+  font-size: 2.3em;
+  font-family: monospace;
+}
+
+li{
+  font-family: monospace;
+  color: rgba(128, 128, 128, 0.76);
+  font-size: large;
+  font-weight: bold;
+  padding-right:2px;
+}
+
+li:hover{
+  color: black;
+}
+
+nav{
+  margin-top: 2%;
+}
+
+#signup{
+  border-radius: 20px;
+  background-color: rgb(63, 204, 204);
+  border: 0px;
+}
+
+#login{
+  color: rgba(128, 128, 128, 0.76);
+}
+
+#login:hover{
+  color: black;
+}
+
+#signup:hover{
+  background-color: rgba(123, 216, 216, 0.671);
+}
+
+#intro{
+  padding-top: 4em;
+}
+#heading{
+  font-weight: bolder;
+  padding-top: 1em;
+  font-size: 4em;
+  padding-left: 1em;
+}
+
+#description{
+  margin-left: 3em;
+  font-size: 1.5em;
+  color:rgba(128, 128, 128, 0.76);
+  font-family: monospace;
+}
+
+#description2{
+  margin-left: 3em;
+  font-size: 1.5em;
+  color:rgba(128, 128, 128, 0.76);
+  font-family: monospace;
+}
+
+#start{
+  padding: 16px;
+  border-radius: 30px;
+  padding-left: 2.5em;
+  padding-right: 2em;
+  background-color: rgb(63, 204, 204);
+  border: 0px;
+  font-family: monospace;
+  font-size: larger;
+  font-weight: bold;
+}
+#start:hover{
+  background-color: rgba(123, 216, 216, 0.671);
+}
+.started{
+  padding-left: 3em;
+}
+
