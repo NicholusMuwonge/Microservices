@@ -1,7 +1,6 @@
 import os
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
-from Users.database import User
 
 database_path = "postgres://{}@{}/{}".format(
   'postgres', 'localhost:5432', 'Roles'

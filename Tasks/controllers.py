@@ -5,7 +5,7 @@ from flask_jwt_extended import (
     )
 from flask_cors import CORS
 from werkzeug.security import generate_password_hash, check_password_hash
-from models import db, setup_db, Tasks
+from .models import db, setup_db, Tasks
 
 
 app = Flask(__name__)
@@ -146,7 +146,3 @@ class RolesLogic:
                 ), 200
         except Exception as error:
             return error
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
