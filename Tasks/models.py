@@ -1,7 +1,7 @@
 import os
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
-
+from Users.database import User
 
 database_path = "postgres://{}@{}/{}".format(
   'postgres', 'localhost:5432', 'Roles'
@@ -23,20 +23,19 @@ class Tasks (db.Model):
     id = db.Column(db.Integer, primary_key=True)
     description = db.Column(db.String, nullable=False)
     state = db.Column(db.String, nullable=False, default='Todo')
-    user_id = db.Column(db.Integer, nullable=False)
+    user = db.Column(db.String, nullable=False)
 
-    def __init__(self, description, state, user_id):
-        self.id= id
+    def __init__(self, description, state, user):
         self.description = description
         self.state = state
-        self.user_id = user_id
+        self.user = user
 
     def format(self):
         return {
             'id':self.id,
-            'username':self.description,
-            'email':self.state,
-            'is_Admin':self.user_id
+            'description':self.description,
+            'state':self.state,
+            'user':self.user
         }
 
     def delete(self):
@@ -45,4 +44,3 @@ class Tasks (db.Model):
 
     def update(self):
         db.session.commit()
-
