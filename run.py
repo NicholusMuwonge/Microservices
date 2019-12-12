@@ -10,7 +10,7 @@ def runFlaskApp2():
 
 
 if __name__ == "__main__":
-    some = threading.Thread(target=runFlaskApp1)
-    other = threading.Thread(target=runFlaskApp2)
-    some.start()
-    other.start()
+    task = threading.Thread(target=runFlaskApp1)
+    user = threading.Thread(target=runFlaskApp2)
+    task.start()
+    user.start()
