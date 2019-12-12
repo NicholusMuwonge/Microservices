@@ -7,7 +7,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import re
 import os
 import datetime
-from .database.database import setup_db, User, db
+from database import setup_db, User, db
 
 
 
@@ -197,4 +197,4 @@ class Roles:
             return error
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(port=8000,debug=True)

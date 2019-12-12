@@ -25,13 +25,10 @@ class User (db.Model):
     email = db.Column(db.String, nullable=False)
     is_Admin = db.Column(db.String, nullable=False, default=False)
     password = db.Column(db.String, nullable=False)
-    # authenticated = db.Column(db.Boolean, default=False)
 
     def __init__(self, username, email, password):
-        # self.id= id
         self.username = username
         self.email = email
-        # self.is_Admin = is_Admin
         self.password = password
 
     def format(self):
