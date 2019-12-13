@@ -62,3 +62,4 @@ this runs on port 5000 locally
 -`/get_single_task/<int:id>` retrieve single task by id
 
 - `/tasks/<int:id>/edit` edit single task if one is the author.
+
