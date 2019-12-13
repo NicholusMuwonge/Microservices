@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import axios from "axios";
 
-class Content extends React.Component {
+class User extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,14 +11,13 @@ class Content extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://127.0.0.1:5000/get_tasks/", {
+      .get("http://127.0.0.1:5001/users/", {
         headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` }
       })
       .then(res => {
         this.setState({
           container: res.data
         });
-        // return res.data;
       })
       .catch(err => err);
   }
@@ -27,7 +26,7 @@ class Content extends React.Component {
   render() {
     return (
       <Fragment>
-        <h2>Tasks</h2>
+        <h2>Users</h2>
         {sessionStorage.getItem("token") !== null ? (
           this.state.container?
           <table className="table">
@@ -35,9 +34,8 @@ class Content extends React.Component {
               <tr>
                 <th scope="col" style={{marginLeft:"3px"}}>#</th>
                 <th scope="col">id</th>
-                <th scope="col">Description</th>
-                <th scope="col">State</th>
-                <th scope="col">Created by</th>
+                <th scope="col">Username</th>
+                
               </tr>
             </thead>
             <tbody>
@@ -46,9 +44,7 @@ class Content extends React.Component {
                   <tr id={el["id"]}>
                     <input type="checkbox" id={el["id"]}/>
                     <td>{el.id}</td>
-                    <td>{el.description}</td>
-                    <td>{el.state}</td>
-                    <td>{el.user}</td>
+                    <td>{el.username}</td>
                   </tr>
                 ))
               )}
@@ -63,4 +59,4 @@ class Content extends React.Component {
   }
 }
 
-export default Content;
+export default User;

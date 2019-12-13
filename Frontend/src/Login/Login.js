@@ -49,7 +49,6 @@ class Login extends React.Component {
         sessionStorage.setItem('token', response.data.token)
         sessionStorage.setItem('username', response.data.username)
         sessionStorage.setItem('isLoggedIn', true)
-        console.log(response, 'tthehejejejej')
         this.props.history.push('/')
         })
       .catch(

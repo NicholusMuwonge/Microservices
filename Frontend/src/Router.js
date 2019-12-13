@@ -4,14 +4,18 @@ import UnderProduction from './UderProduction';
 import App from './App';
 import Login from './Login/Login';
 import Signup from './Signup/Signup';
+import User from './User/User';
+import NavBar from './NavBar';
 
 
 const Routes =() => (
     
     <BrowserRouter >
+    <NavBar />
     <Switch>
         <Route exact path='/' component={App} />
         <Route path='/login' component={Login}/>
+        <Route path='/users' component={User}/>
         <Route path='/signup' component={Signup}/>
         <Route component={UnderProduction} />
     </Switch>

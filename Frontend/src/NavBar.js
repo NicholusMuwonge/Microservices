@@ -33,10 +33,10 @@ const NavBar = () => (
           </li>
         </ul>
 
-        {sessionStorage.getItem('token').length>0 ? 
+        {sessionStorage.getItem('token')!==null ? 
           <ul className="nav nav-bar navbar-right">
             <li className="nav-item">
-              <Link className="nav-link" id="login" to="/users">
+              <Link className="nav-link" id="login" to="/users" onClick={sessionStorage.setItem("userpage",true)}>
                 Users
               </Link>
             </li>
