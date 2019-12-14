@@ -18,7 +18,6 @@ class Content extends React.Component {
         this.setState({
           container: res.data
         });
-        // return res.data;
       })
       .catch(err => err);
   }
@@ -27,9 +26,12 @@ class Content extends React.Component {
   render() {
     return (
       <Fragment>
-        <h2>Tasks</h2>
+        
         {sessionStorage.getItem("token") !== null ? (
           this.state.container?
+          <React.Fragment>
+          <a className="btn btn-success" href="/create-task"> Add new Task</a><br/>
+          <h2>Tasks</h2>
           <table className="table">
             <thead>
               <tr>
@@ -53,10 +55,11 @@ class Content extends React.Component {
                 ))
               )}
             </tbody>
-          </table>:
+          </table>
+          </React.Fragment>:
           <h1 style={{marginLeft:"40%", marginTop:"20%"}}>Loading ....</h1>
         ) : (
-          <p style={{marginLeft:"20%", marginTop:"20%"}}>Please Login</p>
+          <h3 style={{marginLeft:"40%", marginTop:"20%", color:"grey"}}>Welcome to the TodoApp</h3>
         )}
       </Fragment>
     );
