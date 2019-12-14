@@ -1,4 +1,4 @@
-To do App 
+## To do App 
 
 Frontend Part of the application is written in react and can be set up locally by :
 
@@ -13,6 +13,7 @@ The following Functionalities are working
 - sign up
 - get all users
 - get all tasks
+- create Task
 
 
 
