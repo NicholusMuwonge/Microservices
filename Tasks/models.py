@@ -21,7 +21,7 @@ class Tasks (db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     description = db.Column(db.String, nullable=False)
-    state = db.Column(db.String, nullable=False, default='Todo')
+    state = db.Column(db.String, nullable=False, default='To do')
     user = db.Column(db.String, nullable=False)
 
     def __init__(self, description, state, user):

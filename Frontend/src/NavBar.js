@@ -36,9 +36,15 @@ const NavBar = () => (
         {sessionStorage.getItem('token')!==null ? 
           <ul className="nav nav-bar navbar-right">
             <li className="nav-item">
-              <Link className="nav-link" id="login" to="/users" onClick={sessionStorage.setItem("userpage",true)}>
-                Users
-              </Link>
+              {sessionStorage.getItem("userpage")?
+                <Link className="nav-link" id="login" to="/" onClick={sessionStorage.removeItem("userpage",true)}>
+                Task
+                </Link>: 
+                <Link className="nav-link" id="login" to="/users" onClick={sessionStorage.setItem("userpage",true)}>
+                  Users
+                </Link>
+              }
+              
             </li>
             <li className="nav-item">
               <Link

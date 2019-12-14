@@ -29,26 +29,21 @@ class RolesLogic:
     
     @app.route('/create_task', methods=['POST'])
     @jwt_required
-    def user_signup():
+    def create_task():
         author = get_jwt_identity()
 
         all_tasks = Tasks.query.all()
         data = request.get_json()
-        keys =("description", "state")
+        keys =("description")
         if not data or data == '':
             return jsonify({
                 'success': 'false',
                 'message': 'fill in the missing fields'
             }), 400
-        elif data['state'] not in "Done":
-            return jsonify({
-                'success': 'false',
-                'message': 'input proper state'
-        }), 400
         else:
             final_data= Tasks(
                 description=data['description'],
-                state=data['state'],
+                state="To do",
                 user=author)
 
             db.session.add(final_data)
@@ -63,7 +58,7 @@ class RolesLogic:
 
     @app.route('/get_tasks/')
     @jwt_required
-    def get_all_users():
+    def get_all_tasks():
         try:
             data = Tasks.query.all()
             return jsonify(
