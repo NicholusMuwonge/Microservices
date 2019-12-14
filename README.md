@@ -42,7 +42,7 @@ endpoints:
         })
         fields:email, password
 
-- `/users/ -> get all users
+- `/users/` -> get all users
 
 - `/users/<int:id>` -> Retrieving a particular user
 
